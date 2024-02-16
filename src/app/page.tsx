@@ -3,14 +3,17 @@
 import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
+import { useIUGU } from './hooks/iugu.hook'
 
 export default function Home () {
   const { push } = useRouter()
   const { status } = useSession()
+  const IUGU = useIUGU()
 
   useEffect(() => {
-    // console.log("SESSION ON APP", session)
     if (status === 'authenticated') push('/checkout')
+
+    console.log('IUGU', { cc: IUGU.utils.getBrandByCreditCardNumber("4111111111111111") })
   }, [status])
 
   const handleAuthButton = () => {
