@@ -4,7 +4,7 @@ import NextLink from 'next/link'
 
 export default async function CheckoutPage() {
   const session = await getServerAuth()
-  const handleSignOut = () => redirect('/')
+  if (!session) redirect('/')
 
   return (
     <div>

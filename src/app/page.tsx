@@ -23,8 +23,9 @@ export default function Home () {
   return (
     <main className="flex min-h-5 min-w-full bg-slate-200 flex-col items-center justify-between p-24">
       <h1 className="mb-5 text-xl">Github OAuth Test</h1>
+      <span>Session state: {status}</span>
 
-      <div className='flex w-6/12 flex-wrap justify-around mt-12'>
+      <div className='flex w-6/12 flex-wrap justify-around mt-10'>
         <button
           className="border bg-white m-2 border-gray-950 p-3 rounded-xl"
           onClick={handleAuthButton}
